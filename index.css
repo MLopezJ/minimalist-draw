@@ -1,0 +1,47 @@
+.path {
+    stroke-dasharray: 1770;
+    stroke-dashoffset: 1770;
+    animation: initialPosition 2s linear forwards ;
+}
+  
+  
+  /* initial */
+@keyframes initialPosition {
+    from {
+        stroke-dashoffset: -1770;
+    }
+    to {
+        stroke-dashoffset: -445;
+    }
+}
+
+  /*initial to close*/
+@keyframes initialToClose {
+    from {
+        stroke-dashoffset: -445;
+    }
+    to {
+        stroke-dashoffset: -290;
+    }
+}
+
+/* close to open */  
+@keyframes closeToOpen {
+    from {
+        stroke-dashoffset: -290;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/*open to close */
+@keyframes openToClose {
+    from {
+        stroke-dashoffset: 0;
+    }
+    to {
+        stroke-dashoffset: -290;
+    }
+}
