@@ -23,28 +23,26 @@
                
             var path = document.querySelector('path');
             var length = path.getTotalLength(); //1484.6505126953125
-            console.log(length)
-            console.log(document.querySelector('path'))
+
+            const timeOut = (ms) => {
+                return new Promise (res => setTimeout(res,ms));
+            }
+
+            const changeFrameAnimationValue = async (id, frameAnimation, transitionTime, awaitMiliseconds) => {
+                await timeOut(awaitMiliseconds);
+                document.getElementById(id).style.animation = `${frameAnimation} ${transitionTime}s linear forwards`;
+            }
+
+            const animation = async () => {
+                await changeFrameAnimationValue("face","initialToClose",1, 4000);
+                await changeFrameAnimationValue("face","closeToOpen",1, 2000);
+                await changeFrameAnimationValue("face","openToClose",1, 2000);
+            }
 
             setTimeout(() => {
-                //path.classList.add('open-eye');
-                console.log(document.getElementById("face").style.animation);
-                document.getElementById("face").style.animation = "initialToClose 1s linear forwards"
-            }, 4000);
-
-            setTimeout(() => {
-                //path.classList.add('open-eye');
-                console.log(document.getElementById("face").style.animation);
-                document.getElementById("face").style.animation = "closeToOpen 1s linear forwards"
-            }, 6000);
-
-            setTimeout(() => {
-                //path.classList.add('open-eye');
-                console.log(document.getElementById("face").style.animation);
-                document.getElementById("face").style.animation = "openToClose 1s linear forwards"
-            }, 8000);
-
-            
+                animation();
+            }, 4000)
+                        
             </script>
 
         </div>
