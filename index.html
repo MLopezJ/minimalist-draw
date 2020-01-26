@@ -87,7 +87,10 @@
                 navigator.mediaDevices.getUserMedia({video: {facingMode: 'user'}})
                 .then(function (stream) {
                   document.getElementById('video').srcObject = stream;
-                });
+                })
+                .catch((error) => {
+                    alert("Can't show animation. Permission denied");
+                })
                 
                 var canvas = document.getElementById('canvas');
                 var context = canvas.getContext('2d');
