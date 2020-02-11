@@ -1,7 +1,16 @@
+html{ 
+    background: linear-gradient(90deg, rgba(157,195,171,1) 0%, rgba(106,170,182,1) 100%);
+}
+
 .path {
     stroke-dasharray: 1770;
     stroke-dashoffset: 1770;
     animation: initialPosition 2s linear forwards ;
+    
+}
+
+svg{
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
 }
   
   
